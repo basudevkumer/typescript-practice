@@ -1,6 +1,21 @@
-const nameAgeMap: { [index: string]: number } = {};
+enum CardinalDirections {
+//   NotFound   = 404,
+//   Success    = 200,
+//   Accepted   = 202,
+//   BadRequest = 400
+   
+// North = "North",
+// East = "East",
+// South = "South",
+// West = "West"
 
-nameAgeMap.Basudev = 105;
-nameAgeMap.Jhulon = 106;
+// North = 1,  
+//   East,       
+//   South,     
+//   West  
 
-console.log(nameAgeMap);
+}
+
+
+console.log(CardinalDirections);
+
