@@ -1,6 +1,6 @@
-const car: { type: string; model?: string; year: number } = {
-  type: "Toyota",
-  year: 2002,
-};
+const nameAgeMap: { [index: string]: number } = {};
 
-console.log(car);
+nameAgeMap.Basudev = 105;
+nameAgeMap.Jhulon = 106;
+
+console.log(nameAgeMap);
