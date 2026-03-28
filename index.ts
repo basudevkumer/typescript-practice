@@ -1,7 +1,6 @@
-const car: { type: string; model: string; year: number } = {
-  type: "BWM",
-  model: "Corolla",
-  year: 1999,
+const car: { type: string; model?: string; year: number } = {
+  type: "Toyota",
+  year: 2002,
 };
 
-console.log(car["year"]);
+console.log(car);
