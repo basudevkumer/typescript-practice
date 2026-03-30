@@ -1,59 +1,21 @@
-// type Car = {
-//   type: string;
-//   year: number;
-//   model: string;
-// };
-
-// const myCar: Car = {
-//   type: "Road Royals",
-//   year: 2024,
-//   model: "d-700Xz-55F",
-// };
-
-// const myCar2 = {
-//   type: "Mercics",
-//   year: 2000,
-//   model: "T-22F",
-// };
-
-// interface Regtungular {
-//   width: number;
-//   height: number;
-// }
-// interface Regtungular {
-//   border: number;
+// function printStatusCode(code: number | string) {
+//   return `My status code is ${code}.`;
 // }
 
-// const ret: Regtungular = {
-//   width: 500,
-//   height: 500,
-//   border: 200,
-// };
+// console.log(printStatusCode(404));
+// console.log(printStatusCode("505"));
 
-// interface Regtungular {
-//   width: number;
-//   height: number;
-// }
+function printStatusCode(code: number | string) {
+  if (typeof code === "number") {
+    console.log(code.toFixed(2));
+  }
 
-// interface ColorRegtungular extends Regtungular {
-//   color: string;
-// }
+  if (typeof code === "string") {
+    console.log(code.toUpperCase());
+  }
+}
 
-// interface ColorRegtungular2 extends ColorRegtungular {
-//   border: number;
-// }
 
-// const newReg: ColorRegtungular2 = {
-//   width: 200,
-//   height: 200,
-//   color: "green",
-//   border: 5,
-// };
 
-// console.log(newReg);
-
-type Status = "success" | "error";
-
-let respons: Status = "error";
-
-console.log(respons);
+printStatusCode(555.5555555)
+printStatusCode("Bangladesh")
