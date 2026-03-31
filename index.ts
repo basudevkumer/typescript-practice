@@ -1,21 +1,47 @@
-// function printStatusCode(code: number | string) {
-//   return `My status code is ${code}.`;
+// function isAdult(age:number): boolean{
+//   return Math.ceil(age) > 18
+// }
+// console.log(isAdult(18.1555));
+
+// practice void
+
+// function printHello(name: string): void {
+//   console.log(name);
 // }
 
-// console.log(printStatusCode(404));
-// console.log(printStatusCode("505"));
+// function  showMessage(message:string): void{
+//   console.log("News is" + " " + message);
 
-function printStatusCode(code: number | string) {
-  if (typeof code === "number") {
-    console.log(code.toFixed(2));
-  }
+// }
 
-  if (typeof code === "string") {
-    console.log(code.toUpperCase());
-  }
-}
+// showMessage("Hello Bangladesh...");
 
+// function multiple(a: number, b: number) {
+//   return a * b;
+// }
 
+// console.log(multiple(10, 20));
 
-printStatusCode(555.5555555)
-printStatusCode("Bangladesh")
+// function pow(a:number, b:number= 10){
+//   return a ** b
+// }
+
+// console.log(pow(3));
+
+// function sum(a: number, b: number, ...rest: number[]) {
+//   return a + b + rest.reduce((acc, curr) => acc + curr, 0);
+// }
+
+// console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+// type Nagate = (value: number) => number;
+
+// const negateFunction: Nagate = (value) => value - 1;
+
+// console.log(negateFunction(10));
+
+type Nagate = (value: string) => string;
+const negateFunction: Nagate = (value) => {
+ return value
+};
+console.log(negateFunction("Jhulon kumer Ray"));
