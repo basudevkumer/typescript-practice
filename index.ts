@@ -1,104 +1,72 @@
-// class Person {
-//   public name: string;
+// class Box<T>{
 
-//   constructor(name: string) {
-//     this.name = name;
-//   }
-// }
+//   private items: T;
 
-// const p1 = new Person("JK Roy");
-
-// console.log(p1.name);
-
-// class Person{
-
-//   private name : string ;
-
-//   constructor(name:string){
-//      this.name =  name
+//   constructor(items:T){
+//     this.items = items
 //   }
 
-//   getName():string{
-//     return this.name
+//   getBox():T{
+//     return this.items
 //   }
 
 // }
 
-//  const p1 =  new Person("JK Roy")
+// //  string box
 
-//  console.log(p1.getName());
+// const newStringBox = new Box<string>("Banana")
 
-// class Father {
-//   protected taka: number = 5000;
+// // number box
+
+// const newNumber =  new Box<number>(500)
+
+// console.log(newNumber.getBox());
+
+// function createPair<S, T>(v1: S, v2: T): [S, T] {
+//     return [v1, v2];
 // }
 
-// class Soon extends Father {
-//   show(){
-//     console.log(this.taka);
+// createPair<string, number>("age", 25)
 
+// type alias
+
+// type Container<T> = {
+//   value: T;
+//   label: string;
+// };
+
+// const myNumber : Container<number> = {
+//   value:54,
+//   label:"JK Roy"
+// }
+
+// const myString : Container<string> = {
+//   value : "Name",
+//   label: "BK Roy"
+// }
+
+// console.log(myString);
+
+// class NamedDefault<T = string> {
+//   private items: T;
+
+//   constructor(items: T) {
+//     this.items = items;
+//   }
+
+//   getValue(): T {
+//     return this.items;
 //   }
 // }
 
-// const taka1 =  new Soon()
+// const v1 = new NamedDefault<number>(40);
+// console.log(v1.getValue())
 
-// taka1.show()
-// console.log(taka1.taka);
 
-// class Person {
-//   readonly name: string;
+function  showValue<T extends string | number>(value :T ) : T {
+  console.log(value);
 
-//   constructor(name: string) {
-//     this.name = name;
-//   }
-// }
-
-// const p1 =  new Person("BK Roy")
-
-// p1.name = "JK ROy"
-// console.log(p1.name);
-
-// class Regtunglar {
-//   constructor(
-//     protected width: number,
-//     protected height: number,
-//   ) {}
-
-//   getArea(): number {
-//     return this.height * this.width;
-//   }
-
-// }
-
-// class Square extends Regtunglar {
-//   constructor(width: number){
-//     super(width, width)
-//   }
-// }
-
-// const r1 =  new Square(10)
-// const r2 =  new Square(100)
-
-// console.log(r1.getArea());
-// console.log(r2.getArea());
-
-abstract class Shpe {
-  abstract getArea(): number;
-
-  describe(): string {
-    return "This shapes ages = "  + this.getArea();
-  }
+  return value
+  
 }
-
-class Circle extends Shpe {
-  constructor(private radius: number) {
-    super();
-  }
-
-  getArea(): number {
-    return 3.14 * this.radius * this.radius;
-  }
-}
-
-const c = new Circle(7);
-
-console.log(c.describe());
+showValue("Bangladesh")
