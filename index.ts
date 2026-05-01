@@ -1,72 +1,51 @@
-// class Box<T>{
+interface User {
+  name: string;
+  age: number;
+  email?: string;
+}
 
-//   private items: T;
+//partial
 
-//   constructor(items:T){
-//     this.items = items
-//   }
+// let draft: Partial<User> = {};
+// draft.name = "Jhulon Kumar Ray";
 
-//   getBox():T{
-//     return this.items
-//   }
+// console.log(draft.name);
 
-// }
+// required
 
-// //  string box
-
-// const newStringBox = new Box<string>("Banana")
-
-// // number box
-
-// const newNumber =  new Box<number>(500)
-
-// console.log(newNumber.getBox());
-
-// function createPair<S, T>(v1: S, v2: T): [S, T] {
-//     return [v1, v2];
-// }
-
-// createPair<string, number>("age", 25)
-
-// type alias
-
-// type Container<T> = {
-//   value: T;
-//   label: string;
+// let fullName: Required<User> = {
+//   name: "JK Roy",
+//   age: 25,
+//   email: "jhulonkumar888@gmail.com",
 // };
 
-// const myNumber : Container<number> = {
-//   value:54,
-//   label:"JK Roy"
-// }
+// console.log(fullName);
 
-// const myString : Container<string> = {
-//   value : "Name",
-//   label: "BK Roy"
-// }
+// let nameOnly: Pick<User, "name"> = { name: "JK roy" };
 
-// console.log(myString);
+// console.log(nameOnly);
 
-// class NamedDefault<T = string> {
-//   private items: T;
+// let noAge :  Omit<User, "age"> = {name : "Jhulon"}
 
-//   constructor(items: T) {
-//     this.items = items;
-//   }
+// console.log(noAge);
 
-//   getValue(): T {
-//     return this.items;
-//   }
-// }
+// const scores: Record<string, number> = {
+//   JK: 50,
+//   Jhulon: 100,
+// };
 
-// const v1 = new NamedDefault<number>(40);
-// console.log(v1.getValue())
+// console.log(scores);
 
+// const readonly : Readonly<User>  = {name: "20"}
 
-function  showValue<T extends string | number>(value :T ) : T {
-  console.log(value);
+// ReturnType
 
-  return value
-  
-}
-showValue("Bangladesh")
+// type GetUser = () => { name: string; age: number };
+
+// const user: ReturnType<GetUser> = { name: "JK Roy", age: 20 };
+
+// console.log(user);
+
+// type OnlyNumbers = Exclude<string | number | boolean, string>;
+// const val: OnlyNumbers = 42;
+// console.log(  val);
